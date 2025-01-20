@@ -1,32 +1,18 @@
 exec = require('cordova/exec');
 var conversations = {
   open: function(callTo,token,succ,fail) {
-    exec(
-      succ || function(){},
-      fail || function(){},
-      'VideoConversationPlugin',
-      'open',
-      [callTo,token]
-    );
+	//mock
+	return true;
   },
   checkPermissions: function(succ,fail) {
-    exec(
-      succ || function(){},
-      fail || function(){},
-      'VideoConversationPlugin',
-      'checkPermissions',
-      []
-    );
+	//mock
+	return true;
   },
   requestPermissions: function(succ,fail) {
-    exec(
-      succ || function(){},
-      fail || function(){},
-      'VideoConversationPlugin',
-      'requestPermissions',
-      []
-    );
-  }
+	//mock
+	return true;
+  },
+  isDummyPlugin: true
 };
 
 module.exports = conversations;
