@@ -1,0 +1,11 @@
+{
+    "version": "0.0.1",
+    "name": "cordova-plugin-videoconversation-perms",
+    "cordova_name": "Videoconversation dummy persm wrapper - exolis",
+    "license": "Apache 2.0",
+    "platforms": [
+        "android",
+        "ios"
+    ],
+    "engines": []
+}

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin
+    id="cordova-plugin-videoconversation-perms"
+    version="0.0.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Videoconversation dummy perms wrapper - exolis</name>
+    <license></license>
+    <js-module name="videoconversation-solution" src="conversation.js">
+        <clobbers target="cordova.videoconversation" />
+    </js-module>
+    <engines>
+        <engine name="cordova" version=">=4.0.0" />
+    </engines>
+    <platform name="ios">
+        <preference name="CAMERA_USAGE_DESCRIPTION" default="Camera" />
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>$CAMERA_USAGE_DESCRIPTION</string>
+        </config-file>
+        <preference name="MICROPHONE_USAGE_DESCRIPTION" default="Microphone"/>
+        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+            <string>$MICROPHONE_USAGE_DESCRIPTION</string>
+        </config-file>
+    </platform>
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/*">
+			<uses-feature android:name="android.hardware.camera.autofocus" />
+			<uses-feature android:glEsVersion="0x00020000" android:required="true" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        </config-file>
+        <dependency id="cordova-plugin-compat" />
+    </platform>
+</plugin>
